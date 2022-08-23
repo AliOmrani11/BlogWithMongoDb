@@ -48,7 +48,7 @@ public static class SettingRegistration
                 .AllowAnyMethod();
             });
         });
-
+        services.AddScoped<ExceptionHandlerMiddleware>();
         services.AddHttpContextAccessor();
         return services;
     }

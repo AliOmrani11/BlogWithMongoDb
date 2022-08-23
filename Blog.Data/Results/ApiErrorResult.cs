@@ -1,4 +1,6 @@
-﻿namespace Blog.Data.Results;
+﻿using Newtonsoft.Json;
+
+namespace Blog.Data.Results;
 
 public class ApiErrorResult : ApiBaseResult
 {
@@ -15,4 +17,9 @@ public class ApiErrorResult : ApiBaseResult
     }
 
     public List<string>? Messages { get; set; }
+
+    public override string ToString()
+    {
+        return JsonConvert.SerializeObject(this);
+    }
 }
